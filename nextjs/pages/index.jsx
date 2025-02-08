@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
-import Head from "next/head";
 import { css } from "@emotion/react";
+import Head from "next/head";
+
 
 export default function Home() {
   const mainDivMainPage = css`
