@@ -4,7 +4,10 @@ import Input from "../Input/Input";
 
 const InputPassword = ({type="password",placeholder="password"}) => {
   return(
-    <Input type={type} placeholder={placeholder}/>
+    <Input type={type} placeholder={placeholder} css={css`
+      direction:ltr;
+      width:100%;
+      `}/>
   )
 }
 

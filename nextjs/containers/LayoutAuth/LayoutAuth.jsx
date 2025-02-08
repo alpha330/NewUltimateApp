@@ -20,7 +20,7 @@ const LayoutAuth = ({children}) =>{
     <>
     <div css={mainDivLogin}>
       <div><img src="./images/logo.png" alt="logo" css={imgImageLogo}/></div>
-      <h2 css={h2NameApp}>ultimate app</h2>
+      <h2 css={h2NameApp}>ریموت جاب</h2>
       <div>
         {children}
       </div>

@@ -2,7 +2,8 @@
 import Head from "next/head";
 import { css } from "@emotion/react";
 import LayoutAuth from "@/containers/LayoutAuth/LayoutAuth";
-import {InputEmail,InputPassword,Button} from "@/components"
+import {InputEmail,InputPassword,Button} from "@/components";
+import FormControl from "@/containers/FormControl/FormControl";
 
 export default function Home() {
   const mainDivMainPage = css`
@@ -28,9 +29,15 @@ export default function Home() {
       <main css={mainDivMainPage}>
         <LayoutAuth>
           <form onSubmit={handleSubmit}>
+            <FormControl>
             <InputEmail type="email" placeholder="ایمیل"/>
+            </FormControl>
+            <FormControl>
             <InputPassword type="password" placeholder="رمز عبور"/>
+            </FormControl>
+            <FormControl>
             <Button type="submit">ارسال</Button>
+            </FormControl>
           </form>
         </LayoutAuth>
       </main>

@@ -4,7 +4,10 @@ import Input from "../Input/Input";
 
 const InputEmail = ({type="email",placeholder="email"}) => {
   return(
-    <Input type={type} placeholder={placeholder}/>
+    <Input type={type} placeholder={placeholder} css={css`
+      direction:ltr;
+      width:100%;
+      `}/>
   )
 }
 
