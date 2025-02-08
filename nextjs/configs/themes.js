@@ -5,7 +5,14 @@ const theme = {
   },
   typography:{
     h1:{
-      fontSize:"3rem",
+      fontSize:1.802,
+      lineHeight:1.15,
+      fontWeight:400,
+    },
+    h2:{
+      fontSize:1.6,
+      lineHeight:1.15,
+      fontWeight:400,
     }
   },
 }

@@ -2,7 +2,7 @@
 import Head from "next/head";
 import { css } from "@emotion/react";
 import LayoutAuth from "@/containers/LayoutAuth/LayoutAuth";
-import {InputEmail,InputPassword,Button} from "@/components";
+import {InputEmail,InputPassword,Button,H2,Space} from "@/components";
 import FormControl from "@/containers/FormControl/FormControl";
 
 export default function Home() {
@@ -28,15 +28,17 @@ export default function Home() {
       </Head>
       <main css={mainDivMainPage}>
         <LayoutAuth>
+          <Space/>
+          <H2 align={"center"}>ریموت جاب</H2>
           <form onSubmit={handleSubmit}>
             <FormControl>
-            <InputEmail type="email" placeholder="ایمیل"/>
+              <InputEmail type="email" placeholder="ایمیل"/>
             </FormControl>
             <FormControl>
-            <InputPassword type="password" placeholder="رمز عبور"/>
+              <InputPassword type="password" placeholder="رمز عبور"/>
             </FormControl>
             <FormControl>
-            <Button type="submit">ارسال</Button>
+              <Button type="submit">ارسال</Button>
             </FormControl>
           </form>
         </LayoutAuth>
