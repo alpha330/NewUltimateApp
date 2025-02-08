@@ -1,9 +1,15 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { useTheme } from "@emotion/react";
 
 const Button = ({type="button",children}) => {
+  const theme = useTheme()
+  const btnStyle = css`
+    padding:10px;
+    background-color:${theme.color.primary}
+  `;
   return(
-    <button type={type} >{children}</button>
+    <button type={type} css={btnStyle}>{children}</button>
   )
 }
 
