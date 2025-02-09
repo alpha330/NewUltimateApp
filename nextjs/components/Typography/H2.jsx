@@ -4,7 +4,7 @@ import { useTheme } from "@emotion/react";
 
 const H2 = ({children,align}) => {
   const theme = useTheme()
-  const h1Style = css`
+  const h2Style = css`
   margin:2.75rem 0 1.05rem;
   font-weight:${theme.typography.h2.fontWeight};
   line-height:${theme.typography.h2.lineHeight};
@@ -13,7 +13,7 @@ const H2 = ({children,align}) => {
   text-align:${align};
   `;
   return(
-    <h1 css={h1Style}>{children}</h1>
+    <h2 css={h2Style}>{children}</h2>
   )
 }
 
