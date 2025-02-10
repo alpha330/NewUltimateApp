@@ -1,13 +1,18 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-const Input = ({type="text",placeholder}) => {
+const Input = ({type="text",placeholder,onChange}) => {
+
+  const handleOnChange = (event) =>{
+    onChange(event.target.value)
+  }
+
   const mainInputDiv = css`
     width:100%;
     direction:ltr;
   `;
   return(
-    <input type={type} placeholder={placeholder} css={mainInputDiv} />
+    <input onChange={handleOnChange} type={type} placeholder={placeholder} css={mainInputDiv} />
   )
 }
 

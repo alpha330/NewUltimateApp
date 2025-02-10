@@ -2,12 +2,10 @@
 import { css } from "@emotion/react";
 import Input from "../Input/Input";
 
-const InputPassword = ({type="password",placeholder="password"}) => {
+const InputPassword = (props) => {
+
   return(
-    <Input type={type} placeholder={placeholder} css={css`
-      direction:ltr;
-      width:100%;
-      `}/>
+    <Input {...props} />
   )
 }
 

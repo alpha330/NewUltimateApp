@@ -2,9 +2,10 @@
 import { css } from "@emotion/react";
 import Input from "../Input/Input";
 
-const InputEmail = ({type="email",placeholder="email"}) => {
+const InputEmail = (props) => {
+
   return(
-    <Input type={type} placeholder={placeholder} css={css`
+    <Input {...props} css={css`
       direction:ltr;
       width:100%;
       `}/>
