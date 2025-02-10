@@ -2,7 +2,7 @@
 import Head from "next/head";
 import { css } from "@emotion/react";
 import LayoutAuth from "@/containers/LayoutAuth/LayoutAuth";
-import {InputEmail,InputPassword,Button,H2,Space} from "@/components";
+import {InputEmail,InputPassword,InputText,Button,H2,Space,HyperLink} from "@/components";
 import FormControl from "@/containers/FormControl/FormControl";
 import { useState } from "react";
 
@@ -12,6 +12,16 @@ export default function Register() {
       height:100%;
       text-align:center;
     `;
+
+  const situtationControl = css`
+    width:100%;
+    display:flex;
+    align-item:center;
+    justify-content:space-evenly;
+    flex-direction:row;
+    height:fit-content;
+    padding:.2rem;
+  `;
 
   const [formValue,setFormValue] = useState({})
 
@@ -44,7 +54,7 @@ export default function Register() {
           <H2 align={"center"}>لطفا برای ثبتا نام اطلاعات خود را وارد کنید</H2>
           <form onSubmit={handleSubmit}>
             <FormControl>
-              <InputEmail onChange={(value)=> handleOnChange('name',value)} type="text" placeholder="نام"/>
+              <InputText onChange={(value)=> handleOnChange('name',value)} type="text" placeholder="نام"/>
             </FormControl>
             <FormControl>
               <InputEmail onChange={(value)=> handleOnChange('email',value)} type="email" placeholder="ایمیل"/>
@@ -58,6 +68,14 @@ export default function Register() {
             <FormControl>
               <Button type="submit">ثبت نام</Button>
             </FormControl>
+            <div css={situtationControl}>
+              <HyperLink href="/login">
+                وارد شوید
+              </HyperLink>
+              <HyperLink href="/forgot">
+                فراموشی رمز عبور
+              </HyperLink>
+            </div>
           </form>
         </LayoutAuth>
       </main>

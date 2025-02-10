@@ -2,9 +2,9 @@
 import { css } from "@emotion/react";
 import Input from "../Input/Input";
 
-const InputText = ({type="text",placeholder}) => {
+const InputText = (props) => {
   return(
-    <Input type={type} placeholder={placeholder}/>
+    <Input {...props}/>
   )
 }
 

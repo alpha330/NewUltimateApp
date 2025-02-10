@@ -3,6 +3,7 @@ export {default as Input } from './Input/Input';
 export {default as InputText } from './InputText/InputText';
 export {default as InputPassword } from './InputPassword/InputPassword';
 export {default as InputEmail } from './InputEmail/InputEmail';
+export {default as HyperLink } from './HyperLink/HyperLink';
 export { H1 } from './Typography';
 export { H2 } from './Typography';
 export { H3 } from './Typography';

@@ -5,6 +5,7 @@ import { useTheme } from "@emotion/react";
 const Button = ({type="button",children}) => {
   const theme = useTheme()
   const btnStyle = css`
+    width:100%;
     padding:10px;
     background-color:${theme.color.primary}
   `;

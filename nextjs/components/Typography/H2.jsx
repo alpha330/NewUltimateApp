@@ -11,6 +11,7 @@ const H2 = ({children,align}) => {
   margin:0;
   font-size:${theme.typography.h2.fontSize}em;
   text-align:${align};
+  font-family:fa-shabnam;
   `;
   return(
     <h2 css={h2Style}>{children}</h2>
