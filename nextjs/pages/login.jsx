@@ -6,6 +6,8 @@ import {InputEmail,InputPassword,Button,H2,Space} from "@/components";
 import FormControl from "@/containers/FormControl/FormControl";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
+import actionTypse from "@/configs/actionTypes";
 
 export default function Login() {
   const mainDivMainPage = css`
@@ -16,6 +18,7 @@ export default function Login() {
 
   const [formValue,setFormValue] = useState({})
   const router = useRouter()
+  const dispatch = useDispatch()
 
   const handleSubmit=(event)=>{
     if(event){
@@ -23,6 +26,11 @@ export default function Login() {
     }
     // handleing calling api
     console.log("login page on submit",formValue)
+    dispatch({
+      type:actionTypse.LOGIN,
+      logged:true,
+      email:formValue.email,
+    })
     //if success
     router.push('/')
 

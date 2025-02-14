@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import Head from "next/head";
+import { useSelector } from "react-redux";
 
 
 export default function Home() {
@@ -9,6 +10,8 @@ export default function Home() {
       height:100%;
       text-align:center;
     `;
+  const auth = useSelector((state)=>state.auth)
+  console.log("auth",auth)
   return (
     <>
       <Head>
@@ -19,7 +22,8 @@ export default function Home() {
       </Head>
       <main css={mainDivMainPage}>
         <div>
-          ULTIMATE APP
+          {(!auth || !auth.logged) && "ULTIMATE APP" }
+          {auth && auth.logged && auth.email}
         </div>
       </main>
     </>
