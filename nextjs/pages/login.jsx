@@ -7,7 +7,8 @@ import FormControl from "@/containers/FormControl/FormControl";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
-import actionTypse from "@/configs/actionTypes";
+import { LOGIN_ACTION } from "@/actions";
+import { useSelector } from "react-redux";
 
 export default function Login() {
   const mainDivMainPage = css`
@@ -18,27 +19,19 @@ export default function Login() {
     `;
 
   const [formValue,setFormValue] = useState({})
-  const [loadin,setLoading] = useState(false)
   const router = useRouter()
   const dispatch = useDispatch()
-
+  const auth = useSelector((state)=>(state.auth))
+  console.log("auth in login",auth)
   const handleSubmit= async (event)=>{
     if(event){
       event.preventDefault()
     }
 
     // handleing calling api
-    setLoading(true)
-    const response = await fetch('http://127.0.0.1:5500/login.json')
-    const {user} = await response.json()
-    setLoading(false)
-    dispatch({
-      type:actionTypse.LOGIN,
-      logged:true,
-      user:user,
-    })
+    dispatch(LOGIN_ACTION())
     //if success
-    router.push('/')
+    // router.push('/')
 
   }
 
@@ -70,7 +63,7 @@ export default function Login() {
               <InputPassword  onChange={(value)=> handleOnChange('password',value)} type="password" placeholder="رمز عبور"/>
             </FormControl>
             <FormControl>
-              <Button type="submit">ارسال</Button>
+              <Button type="submit" loading={auth.loading}>ارسال</Button>
             </FormControl>
           </form>
         </LayoutAuth>
