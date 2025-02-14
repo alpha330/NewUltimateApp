@@ -4,12 +4,14 @@ import { css } from "@emotion/react";
 const LayoutAuth = ({children}) =>{
   const mainDivLogin = css`
     display:flex;
-    height:100vh;
+    height:100%;
     align-items:center;
     justify-content:center;
     padding:3rem;
     width:100%;
     flex-direction:column;
+    grid-row: 2/6;
+    grid-column: 2/10;
   `;
   const imgImageLogo = css`
     width:8rem;

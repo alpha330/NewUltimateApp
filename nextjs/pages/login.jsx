@@ -12,24 +12,30 @@ import actionTypse from "@/configs/actionTypes";
 export default function Login() {
   const mainDivMainPage = css`
       width:100%;
-      height:100%;
+      height:100vh;
       text-align:center;
+
     `;
 
   const [formValue,setFormValue] = useState({})
+  const [loadin,setLoading] = useState(false)
   const router = useRouter()
   const dispatch = useDispatch()
 
-  const handleSubmit=(event)=>{
+  const handleSubmit= async (event)=>{
     if(event){
       event.preventDefault()
     }
+
     // handleing calling api
-    console.log("login page on submit",formValue)
+    setLoading(true)
+    const response = await fetch('http://127.0.0.1:5500/login.json')
+    const {user} = await response.json()
+    setLoading(false)
     dispatch({
       type:actionTypse.LOGIN,
       logged:true,
-      email:formValue.email,
+      user:user,
     })
     //if success
     router.push('/')

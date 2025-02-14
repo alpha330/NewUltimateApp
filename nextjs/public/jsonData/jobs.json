@@ -24,7 +24,7 @@
     "contractType":"قراردادی",
     "contractStatus":"توافقی",
     "jobImage":"./images/jobs/sa.jpg",
-    "id":2
+    "id":3
   },
   {
     "jobtype":"فرانت اند FE WEB",
@@ -33,7 +33,7 @@
     "contractType":"پروژه ای و پشتیبانی",
     "contractStatus":"توافقی",
     "jobImage":"./images/jobs/fe.jpg",
-    "id":1
+    "id":4
   },
   {
     "jobtype":"Backend Dev تسک بک اند",
@@ -42,7 +42,7 @@
     "contractType":"پروژه ای",
     "contractStatus":"توافقی",
     "jobImage":"./images/jobs/be.jpg",
-    "id":2
+    "id":5
   },
   {
     "jobtype":"سیستم ادمین SysAdmin",
@@ -51,6 +51,6 @@
     "contractType":"قراردادی",
     "contractStatus":"توافقی",
     "jobImage":"./images/jobs/sa.jpg",
-    "id":2
+    "id":6
   }
 ]

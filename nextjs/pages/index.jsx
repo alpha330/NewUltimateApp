@@ -69,7 +69,7 @@ export default function Home() {
               contractType={item.contractType}
               contractStatus={item.contractStatus}
               jobImage={item.jobImage}
-              key={Date.now()}
+              key={item.id}
               />
             ))}
           </div>
