@@ -4,6 +4,8 @@ export {default as InputText } from './InputText/InputText';
 export {default as InputPassword } from './InputPassword/InputPassword';
 export {default as InputEmail } from './InputEmail/InputEmail';
 export {default as HyperLink } from './HyperLink/HyperLink';
+export {default as JobItem } from './JobItem/JobItem';
+export {default as MenuBtn } from './MenuBtn/MenuBtn';
 export { H1 } from './Typography';
 export { H2 } from './Typography';
 export { H3 } from './Typography';

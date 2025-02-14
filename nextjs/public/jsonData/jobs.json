@@ -1,0 +1,56 @@
+[
+  {
+    "jobtype":"فرانت اند FE WEB",
+    "jobStatus":"تسک آزاد",
+    "jobSkills":"reactjs,reactnative",
+    "contractType":"پروژه ای و پشتیبانی",
+    "contractStatus":"توافقی",
+    "jobImage":"./images/jobs/fe.jpg",
+    "id":1
+  },
+  {
+    "jobtype":"Backend Dev تسک بک اند",
+    "jobStatus":"تسک آزاد",
+    "jobSkills":"Django,Python",
+    "contractType":"پروژه ای",
+    "contractStatus":"توافقی",
+    "jobImage":"./images/jobs/be.jpg",
+    "id":2
+  },
+  {
+    "jobtype":"سیستم ادمین SysAdmin",
+    "jobStatus":"تسک آزاد",
+    "jobSkills":"MMSE,Cisco,Mikrotik",
+    "contractType":"قراردادی",
+    "contractStatus":"توافقی",
+    "jobImage":"./images/jobs/sa.jpg",
+    "id":2
+  },
+  {
+    "jobtype":"فرانت اند FE WEB",
+    "jobStatus":"تسک آزاد",
+    "jobSkills":"reactjs,reactnative",
+    "contractType":"پروژه ای و پشتیبانی",
+    "contractStatus":"توافقی",
+    "jobImage":"./images/jobs/fe.jpg",
+    "id":1
+  },
+  {
+    "jobtype":"Backend Dev تسک بک اند",
+    "jobStatus":"تسک آزاد",
+    "jobSkills":"Django,Python",
+    "contractType":"پروژه ای",
+    "contractStatus":"توافقی",
+    "jobImage":"./images/jobs/be.jpg",
+    "id":2
+  },
+  {
+    "jobtype":"سیستم ادمین SysAdmin",
+    "jobStatus":"تسک آزاد",
+    "jobSkills":"MMSE,Cisco,Mikrotik",
+    "contractType":"قراردادی",
+    "contractStatus":"توافقی",
+    "jobImage":"./images/jobs/sa.jpg",
+    "id":2
+  }
+]
