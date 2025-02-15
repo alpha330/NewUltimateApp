@@ -1,24 +1,25 @@
 import actionTypse from "@/configs/actionTypes"
+import fetchUrl from "@/utils/fetchUrl"
 
 const LOGIN_ACTION = () => {
 
-  return dispatch => {
+  return async dispatch => {
     dispatch({
       type:actionTypse.LOGIN_STARTED,
       loading:true,
       logged:true,
     })
     try{
-      setTimeout(async()=>{
-        const response = await fetch('http://127.0.0.1:5500/login.json')
-        const {user} = await response.json()
-        dispatch({
-          type:actionTypse.LOGIN_SUCCESS,
-          logged:true,
-          loading:false,
-          user:user,
-        })
-        },3000)
+      const {user} = await fetchUrl({
+        url:'http://127.0.0.1:5500/login.json',
+        method:"GET"
+      })
+      dispatch({
+        type:actionTypse.LOGIN_SUCCESS,
+        logged:true,
+        loading:false,
+        user:user,
+      })
     }catch(e){
       dispatch({
         type:actionTypse.LOGIN_FAILED,
