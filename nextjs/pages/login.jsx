@@ -6,9 +6,8 @@ import {InputEmail,InputPassword,Button,H2,Space} from "@/components";
 import FormControl from "@/containers/FormControl/FormControl";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import { LOGIN_ACTION } from "@/actions";
-import { useSelector } from "react-redux";
 
 export default function Login() {
   const mainDivMainPage = css`

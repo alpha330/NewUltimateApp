@@ -1,13 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import Head from "next/head";
-import { useSelector } from "react-redux";
 import { H2 } from "@/components";
-import jobs from "@/public/jsonData/jobs.json"
 import { JobItem } from "@/components";
+import { useSelector } from "react-redux";
+import { GET_LIST_JOB_ACTION } from "@/actions";
 
 
-export default function Home() {
+const  Home = ({jobs,loading}) => {
   const mainDivMainPage = css`
       width:100%;
       text-align:center;
@@ -44,8 +44,8 @@ export default function Home() {
     align-self: center;
   `;
 
-  const auth = useSelector((state)=>state.auth)
-  console.log("auth",auth)
+  const {auth} = useSelector((state)=>state.auth)
+
   return (
     <>
       <Head>
@@ -61,9 +61,10 @@ export default function Home() {
           {auth && auth.logged && auth.email}
           </div>
           <div css={jobDiv}>
-            {jobs.map((item)=>(
+            {loading && "LOADING ..."}
+            {!loading && jobs && jobs.map((item)=>(
               <JobItem
-              jobType={item.jobType}
+              jobType={item.jobtype}
               jobSkills={item.jobSkills}
               jobStatus={item.jobStatus}
               contractType={item.contractType}
@@ -78,3 +79,14 @@ export default function Home() {
     </>
   );
 }
+
+Home.getInitialProps = async({reduxStore}) => {
+  await reduxStore.dispatch(GET_LIST_JOB_ACTION())
+  const {job} = reduxStore.getState()
+  return {
+    loading:job.loading,
+    jobs:job.jobs
+  }
+}
+
+export default Home

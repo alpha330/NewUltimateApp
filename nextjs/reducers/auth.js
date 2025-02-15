@@ -26,6 +26,29 @@ const auth = ( state = [] ,action) => {
         error:action.error,
         error_message:action.error_message,
       }
+    case actionTypse.REGISTER_STARTED:
+      console.log("action",action)
+      return{
+        ...state,
+        loading:action.loading,
+        logged:action.logged
+      }
+    case actionTypse.REGISTER_SUCCESS:
+    console.log("action",action)
+    return{
+      ...state,
+      loading:action.loading,
+      logged:action.logged,
+    }
+    case actionTypse.REGISTER_FAILED:
+      console.log("action",action)
+      return{
+        ...state,
+        logged:action.logged,
+        loading:action.loading,
+        error:action.error,
+        error_message:action.error_message,
+      }
     default:
       return state;
   }

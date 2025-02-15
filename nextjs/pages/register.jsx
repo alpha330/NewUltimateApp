@@ -5,6 +5,8 @@ import LayoutAuth from "@/containers/LayoutAuth/LayoutAuth";
 import {InputEmail,InputPassword,InputText,Button,H2,Space,HyperLink} from "@/components";
 import FormControl from "@/containers/FormControl/FormControl";
 import { useState } from "react";
+import { useDispatch,useSelector } from "react-redux";
+import { REGISTER_ACTION } from "@/actions";
 
 export default function Register() {
   const mainDivMainPage = css`
@@ -24,12 +26,13 @@ export default function Register() {
   `;
 
   const [formValue,setFormValue] = useState({})
-
+  const dispatch = useDispatch()
+  const auth = useSelector((state)=>(state.auth))
   const handleSubmit=(event)=>{
     if(event){
       event.preventDefault()
     }
-    console.log("login page on submit",formValue)
+    dispatch(REGISTER_ACTION())
   }
 
   const handleOnChange = (name,value) =>{
@@ -66,7 +69,7 @@ export default function Register() {
               <InputPassword  onChange={(value)=> handleOnChange('password2',value)} type="password" placeholder="تکرار رمز عبور"/>
             </FormControl>
             <FormControl>
-              <Button type="submit">ثبت نام</Button>
+              <Button type="submit" loading={auth.loading}>ثبت نام</Button>
             </FormControl>
             <div css={situtationControl}>
               <HyperLink href="/login">
