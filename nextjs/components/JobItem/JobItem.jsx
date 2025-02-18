@@ -53,7 +53,7 @@ const JobItem = ({jobType,jobStatus,jobSkills,contractType,contractStatus,jobIma
         <H5>{contractStatus}</H5>
       </div>
       <div css={btnDiv}>
-        <Button>ثبت</Button>
+        <Button type="Button">ثبت</Button>
       </div>
     </div>
   )
