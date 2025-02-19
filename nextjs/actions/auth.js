@@ -4,7 +4,7 @@ const LOGIN_ACTION = () => {
 
   return async dispatch => {
     return reduxCall(dispatch,{
-      url:'http://127.0.0.1:5500/login.json',
+      url:'/login.json',
       method:'GET',
       name:'LOGIN'
     })
@@ -15,7 +15,7 @@ const REGISTER_ACTION = () => {
 
   return async dispatch => {
     return reduxCall(dispatch,{
-      url:'http://127.0.0.1:5500/register.json',
+      url:'/register.json',
       method:'GET',
       name:'REGISTER'
     })

@@ -4,7 +4,7 @@ const GET_LIST_JOB_ACTION = () => {
 
   return async dispatch => {
     return reduxCall(dispatch,{
-      url:'http://127.0.0.1:5500/jobs.json',
+      url:'/jobs.json',
       method:'GET',
       name:'GET_LIST_JOB'
     })
