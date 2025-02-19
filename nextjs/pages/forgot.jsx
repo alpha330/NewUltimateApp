@@ -19,7 +19,6 @@ export default function Forgot() {
     if(event){
       event.preventDefault()
     }
-    console.log("login page on submit",formValue)
   }
 
   const handleOnChange = (name,value) =>{
