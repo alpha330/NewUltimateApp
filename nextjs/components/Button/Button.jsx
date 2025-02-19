@@ -2,7 +2,7 @@
 import { css } from "@emotion/react";
 import { useTheme } from "@emotion/react";
 
-const Button = ({type="button",children,loading}) => {
+const Button = ({type="button",children,loading,disabled,handleClick=()=>{}}) => {
   const theme = useTheme()
   const btnStyle = css`
     width:100%;
@@ -11,10 +11,20 @@ const Button = ({type="button",children,loading}) => {
   `;
   console.log("button",loading)
   return(
-    <button type={type} css={btnStyle}>
-      {loading && "loading"}
-      {!loading && children}
-      </button>
+    <>
+    {disabled &&
+    <button onClick={handleClick} disabled type={type} css={btnStyle} >
+    {loading && "loading"}
+    {!loading && children}
+    </button>
+    }
+    {!disabled &&
+    <button onClick={handleClick} type={type} css={btnStyle} >
+    {loading && "loading"}
+    {!loading && children}
+    </button>
+    }
+    </>
   )
 }
 
